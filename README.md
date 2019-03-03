@@ -14,23 +14,37 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
+|id|integer|null: false, foreign_key: true|
+|use_id|integer|null: false, foreign_key: true|
+|text|text|null: false, foreign_key: true|
+|name|text|null: false, foreign_key: true|
+|update_at|datetime|null: false, foreign_key: true|
 
 ### Association
-- has_many :users_group
+- has_many :members
+- has_many :users
 
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|id|integer|null: false, foreign_key: true|
+|email|string|null: false, foreign_key: true|
+|name|text|null: false, foreign_key: true|
+|pasword|string|null: false, foreign_key: true|
+|update_at|datetime|null: false, foreign_key: true|
 
 ### Association
-- has_many :groups_user
+- has_many :members
+- has_many :groups
 
-## chatsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|chat_id|integer|null: false, foreign_key: true|
+|id|integer|null: false, foreign_key: true|
+|text|text|null: false, foreign_key: true|
+|image|string|null: false, foreign_key: true|
+|update_at|datetime|null: false, foreign_key: true|
 
 ### Association
-- has_many :users_group
+- belongs_to :group
+- belongs_to :user
