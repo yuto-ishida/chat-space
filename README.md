@@ -23,6 +23,7 @@
 ### Association
 - has_many :members
 - has_many :users
+- has_many :messages
 
 ## usersテーブル
 |Column|Type|Options|
@@ -36,6 +37,7 @@
 ### Association
 - has_many :members
 - has_many :groups
+- has_many :messages
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -44,6 +46,8 @@
 |text|text|null: false, foreign_key: true|
 |image|string|null: false, foreign_key: true|
 |update_at|datetime|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
