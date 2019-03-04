@@ -14,11 +14,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|use_id|integer|null: false, foreign_key: true|
-|text|text|null: false, foreign_key: true|
-|name|text|null: false, foreign_key: true|
-|update_at|datetime|null: false, foreign_key: true|
+|id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+|update_at|datetime|null: false|
 
 ### Association
 - has_many :members
@@ -28,11 +27,11 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|email|string|null: false, foreign_key: true|
-|name|text|null: false, foreign_key: true|
-|pasword|string|null: false, foreign_key: true|
-|update_at|datetime|null: false, foreign_key: true|
+|id|integer|null: false,|
+|email|string|null: false|
+|name|text|null: false,|
+|pasword|string|null: false,|
+|update_at|datetime|null: false,|
 
 ### Association
 - has_many :members
@@ -42,10 +41,10 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|text|text|null: false, foreign_key: true|
-|image|string|null: false, foreign_key: true|
-|update_at|datetime|null: false, foreign_key: true|
+|id|integer|null: false,|
+|text|text|null: false,|
+|image|string|null: false,|
+|update_at|datetime|null: false,|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
