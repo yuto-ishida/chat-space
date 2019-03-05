@@ -18,8 +18,8 @@
 |update_at|datetime|null: false|
 
 ### Association
-- has_many :members, through: :group_users
-- has_many :users
+- has_many :members
+- has_many :users, through: :members
 - has_many :messages
 
 ## usersテーブル
@@ -31,8 +31,8 @@
 |update_at|datetime|null: false,|
 
 ### Association
-- has_many :members, through: :group_users
-- has_many :groups
+- has_many :members
+- has_many :groups, through: :members
 - has_many :messages
 
 ## messagesテーブル
