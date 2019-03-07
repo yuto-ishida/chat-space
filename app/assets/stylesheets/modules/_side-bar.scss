@@ -25,43 +25,30 @@
           &_menu {
           display: flex;
 
-            .fas.fa-address-card {
-             margin-left: 0.3rem;
-             color: white;
-             display: inline-block;
-             font-size: inherit;
-             text-rendering: auto;
-             -webkit-font-smoothing: antialiased;
-             content: "\f044";
-            }
-
-            .fas.fa-cannabis {
-             margin-left: 0.3rem;
-             color: white;
-             display: inline-block;
-             font-size: inherit;
-             text-rendering: auto;
-             -webkit-font-smoothing: antialiased;
-             content: "\f013";
-            }
-
-            &_a {
-            color: white;
-
-              &_i {
-              display: inline-block;
-              font: normal;
-              content: "\f044";
-            }
-          }
-
-            &_li {
+            &_edit-user{
             margin-left: 0.3rem;
-
-              &_a {
-              color: white;
-              }
             }
+                .fas.fa-edit {
+                 color: white;
+                 display: inline-block;
+                 font-size: inherit;
+                 text-rendering: auto;
+                 -webkit-font-smoothing: antialiased;
+                 content: "\f044";
+                }
+
+            &_new-group{
+            margin-left: 0.3rem;
+            }
+
+                .fas.fa-cog {
+                 color: white;
+                 display: inline-block;
+                 font-size: inherit;
+                 text-rendering: auto;
+                 -webkit-font-smoothing: antialiased;
+                 content: "\f013";
+                }
          }
        }
     }
