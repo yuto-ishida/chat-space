@@ -1,0 +1,39 @@
+.flash-box
+  .flash-box_notice ログインしました。
+.wrapper
+  .chat-side
+    .chat-side_header
+      .chat-side_header_box
+        %p.chat-side_header_box_user-name nara
+        %ul.chat-side_header_box_menu
+          %li.chat-side_header_box_menu_edit-user
+            = link_to '#' do
+              %i.fas.fa-edit
+          %li.chat-side_header_box_menu_new-group
+            = link_to '#' do
+              %i.fas.fa-cog
+    .chat-side_groups
+      .chat-side_group
+        %p.chat-side_group_name naraclub
+        %p.chat-side_group_message nara!
+  .chat-main
+    .header
+      .header_leftbox
+        %h2.header_leftbox_group naraclub
+        %ul.header_leftbox_member-list Member: nara
+      .header_rightbox
+        .header_rightbox_edit-btn Edit
+    .messages
+      .message
+        .message_upper
+          %p.message_upper__user-name nara
+          %p.message_upper__date 2019/02/09(sat) 14:33:17
+        %p.message__text nara!
+    .form
+      %form.new_message
+        .input-box
+          %input.input-box__text{type: 'text'}
+          %label.input-box__image{for: "message_image"}
+            %i.fas.fa-image
+            %input#message_image{type: 'file'}
+        %input.submit-btn{type: 'submit', value: "Send"}
