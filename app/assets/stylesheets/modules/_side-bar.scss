@@ -56,7 +56,7 @@
     &_groups {
     background-color: $side_blue_light;
     height: calc(100vh - 100px);
-    padding: 20px 20px 0;
+    padding: 0 20px;
     overflow: scroll;
 
       .chat-side_group {
@@ -65,10 +65,13 @@
         &_name {
         font-size: 15px;
         margin-bottom: 5px;
+        color: $white;
         }
 
         &_message {
         font-size: 11px;
+        color: $white;
+        margin-top: 5px;
         }
       }
     }
