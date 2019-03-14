@@ -1,5 +1,5 @@
 $(function(){
-  function buildHTML(message){
+  function buildSendMessageHTMLL(message){
         var html = `<div class="message">
                      <div class="message__upper">
                        <div class="message__upper--user-name">
@@ -28,13 +28,13 @@ $(function(){
       processData: false,
       contentType: false
   })
-    .done(function(data){
+    .done(function(messagedata){
       var html = buildHTML(data);
       $('.messages').append(html);
       $("form")[0].reset();
       $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
     })
-    .fail(function(data) {
+    .fail(function(messagedata) {
       alert('メッセージを入力してください。')
     })
   })
