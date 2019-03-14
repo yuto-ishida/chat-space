@@ -28,13 +28,13 @@ $(function(){
       processData: false,
       contentType: false
   })
-    .done(function(messagedata){
+    .done(function(message){
       var html = buildHTML(data);
       $('.messages').append(html);
       $("form")[0].reset();
       $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
     })
-    .fail(function(messagedata) {
+    .fail(function(message) {
       alert('メッセージを入力してください。')
     })
   })
