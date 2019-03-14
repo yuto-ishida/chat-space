@@ -29,7 +29,7 @@ $(function(){
       contentType: false
   })
     .done(function(message){
-      var html = buildHTML(data);
+      var html = buildSendMessageHTMLL(message);
       $('.messages').append(html);
       $("form")[0].reset();
       $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
