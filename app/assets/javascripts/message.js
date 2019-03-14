@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    console.log(message.image)
         var html = `<div class="message">
                      <div class="message__upper">
                        <div class="message__upper--user-name">
@@ -32,8 +31,8 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.inputbox').val('')
-      $("html,chat-main").animate({scrollTop:0});
+      $("form")[0].reset();
+      $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
     })
     .fail(function(data) {
       alert('メッセージを入力してください。')
