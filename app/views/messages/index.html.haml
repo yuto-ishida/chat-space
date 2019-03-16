@@ -13,12 +13,11 @@
       .header_rightbox
         .header_rightbox_edit-btn Edit
     .messages
-      .message
-        = render @messages
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
         .input-box
-          = f.text_field :content, class: "input-box__text"
+          = f.text_field :content, class: "input-box__text" ,placeholder: 'type a message'
           = f.label :image, class: "input-box__image" do
             = fa_icon 'i.fas', class: "fa-image"
             = f.file_field :image, class: "message_image"
