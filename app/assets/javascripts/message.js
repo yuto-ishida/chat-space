@@ -1,21 +1,26 @@
 $(function(){
   function buildSendMessageHTMLL(message){
-        var html = `<div class="message">
-                     <div class="message__upper">
-                       <div class="message__upper--user-name">
-                       ${message.user_name}
-                       </div>
-                       <div class="message__upper--date">
-                       ${message.created_at}
-                       </div>
-                     </div>
-                     <div class="message__text">
-                     ${message.text}
-                      <img src=${message.image}>
-                     </div>
-                   </div>`
+    var imageHtml = message.image ? `<img src=${message.image}>` : ""
+    var html =
+      `
+        <div class="message">
+          <div class="message__upper">
+            <div class="message__upper--user-name">
+              ${message.user_name}
+            </div>
+            <div class="message__upper--date">
+              ${message.created_at}
+            </div>
+          </div>
+          <div class="message__text">
+            ${message.text}
+            ${imageHtml}
+          </div>
+        </div>
+      `
     return html;
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -27,12 +32,15 @@ $(function(){
       dataType: 'json',
       processData: false,
       contentType: false
-  })
+    })
     .done(function(message){
       var html = buildSendMessageHTMLL(message);
       $('.messages').append(html);
       $("form")[0].reset();
       $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
+    })
+    .always(function(message){
+      $('.submit-btn').prop("disabled", false);
     })
     .fail(function(message) {
       alert('メッセージを入力してください。')
