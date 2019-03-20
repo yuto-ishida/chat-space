@@ -48,19 +48,18 @@ $(function(){
   })
 
     $(function(){
-      setInterval(update, 5000)
-        function update(){
+      setInterval(messageupdate, 5000)
+        function messageupdate(){
           var message_id = $('.messagedata:last').data('message-id');
           var url = location.herf;
-          console.log(message_id)
           $.ajax({
             url: url,
             type: 'GET',
             data:{id: message_id},
             dataType: 'json'
           })
-          .done(function(data) {
-          $.each(data, function(i, message) {
+          .done(function(message) {
+          $.each(message, function(i, message) {
             var html = buildSendMessageHTMLL(message);
            $('.messages').append(html);
           $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
