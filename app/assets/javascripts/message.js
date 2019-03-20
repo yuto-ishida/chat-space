@@ -3,7 +3,7 @@ $(function(){
     var imageHtml = message.image ? `<img src=${message.image}>` : ""
     var html =
       `
-        <div class="message">
+        <div class="messagedata" data-message-id="${message.id}">
           <div class="message__upper">
             <div class="message__upper--user-name">
               ${message.user_name}
@@ -46,4 +46,26 @@ $(function(){
       alert('メッセージを入力してください。')
     })
   })
-})
+
+    $(function(){
+      setInterval(update, 5000)
+        function update(){
+          var message_id = $('.messagedata:last').data('message-id');
+          var url = location.herf;
+          console.log(message_id)
+          $.ajax({
+            url: url,
+            type: 'GET',
+            data:{id: message_id},
+            dataType: 'json'
+          })
+          .done(function(data) {
+          $.each(data, function(i, message) {
+            var html = buildSendMessageHTMLL(message);
+           $('.messages').append(html);
+          $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
+          });
+        });
+    }
+  });
+});
