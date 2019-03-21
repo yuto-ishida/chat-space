@@ -10,8 +10,9 @@
         %ul.header_leftbox_member-list
           - @group.users.each do |user|
             = user.name
-      .header_rightbox
-        .header_rightbox_edit-btn Edit
+      %a
+        .header__edit-btn
+          = link_to "Edit", edit_group_path(@group)
     .messages
       = render @messages
     .form
