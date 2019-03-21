@@ -19,17 +19,16 @@
     color: #999999;
   }
 }
-
-  &_rightbox{
-    color: $light_blue;
-
-      &_edit-btn{
-      height: 40px;
-      line-height: 40px;
-      padding: 0 20px;
-      margin-top: 30px;
-      border: solid 1px $light_blue;
+  a{
+    color: #38aef0;
+    text-decoration: none;
+  }
+    &__edit-btn{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-top: 30px;
+    border: solid 1px $light_blue;
     }
   }
-}
 
